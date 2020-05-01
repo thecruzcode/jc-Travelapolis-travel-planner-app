@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Travelapolis</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <header class="header">
+      <nav class="navbar">
+        <a href="#about" class="navbar__logo">
+          <img
+            src="./img/travelapolis-logo.png"
+            alt="Travelapolis logo"
+            class="logo__image"
+          />
+        </a>
+        <h2 class="navbar__brand--name logo__text">Travelapolis</h2>
+        <ul class="navbar__menu">
+          <li class="navbar__list"><a href="#about">Background</a></li>
+          <li class="navbar__list"><a href="#planner">Planner</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- THE ABOUT SECTION -->
+
+      <section id="about" class="section section__about">
+        <div class="map__wrapper">
+          <div class="about__map">
+            <h1 class="map__heading">You've Entered Travelapolis</h1>
+            <h3 class="map__title">Set Your Experience Here</h3>
+            <p class="map__text">
+              Travelapolis helps you save, plan, organize, and share amazing
+              adventures. Get ready to be inspired and have some fun, even
+              before you depart.
+            </p>
+            <a href="#" class="map__link">Go to planner</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE PLANNER -->
+      <section id="planner" class="section section__planner">
+        <div class="container planning__form">
+          <div class="form__image section__image">
+            <img src="./img/airport.png" alt="passport image" />
+          </div>
+          <form action="#" class="from__content" id="form">
+            <h2 class="form__heading">Set your Destination</h2>
+            <input
+              type="text"
+              class="form__input input__from"
+              name="from"
+              placeholder="Departing from?"
+              autocomplete="off"
+              required
+            />
+            <input
+              type="text"
+              class="form__input input__to"
+              name="to"
+              placeholder="Traveling to?"
+              autocomplete="off"
+              required
+            />
+            <label class="date__label" for="date">Travel date?</label>
+            <input
+              type="date"
+              class="form__input input__date"
+              name="date"
+              required
+            />
+            <input
+              type="submit"
+              class="input__submit"
+              name="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION RESULT -->
+
+      <section id="result" class="section section__result invisible">
+        <div class="container results">
+          <div class="results__image">
+            <img
+              src="./img/passport_256.png"
+              alt="passport image"
+              id="fromPixabay"
+            />
+          </div>
+          <div class="result__content">
+            <i class="city__icon icon__result fas fa-thumbtack"></i>
+            <h2 class="city__name text__result">
+              You are heading to: <span id="city"></span>
+            </h2>
+            <i class="date__icon icon__result fas fa-calendar-day"></i>
+            <h2 class="date__name text__result">
+              Departing on: <span id="date">DD/MM/YYYY</span>
+            </h2>
+            <i class="days__icon icon__result fas fa-hotel"></i>
+            <h2 class="days__name text__result">
+              This is <span id="days"> NUM </span> days away
+            </h2>
+
+            <i class="weather__icon icon__result fas fa-cloud-sun"></i>
+            <h2 class="weather__name text__result">
+              The weather should be: <span id="temp">200C</span> &#176; F,
+              <span id="summary"></span>.
+            </h2>
+
+            <a class="button button__save" id="save" href="#">Print</a>
+            <a class="button button__delete" id="delete" href="#">Delete</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__copyright">
+        <p class="copyright__text">Travelapolis &copy</p>
+      </div>
+      <div class="footer__credits">
+        <div class="credits__flaticon">
+          Icons from
+          <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
+            >Freepik</a
+          >
+          and
+          <a href="https://www.flaticon.com" title="Flaticon"
+            >www.flaticon.com</a
+          >
+        </div>
+        <div class="credits__freepik">
+          Background images obtained from
+          <a href="https://unsplash.com/">www.unsplashed.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SERVICE WORKERS -->
+    <script>
+      //Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        //Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
