@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/client/index.js',
   devtool: 'source-map',
   devServer: {
-    port: 3030,
+    port: 8000,
   },
   output: {
     libraryTarget: 'var',
